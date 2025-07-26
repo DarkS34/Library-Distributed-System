@@ -1,30 +1,77 @@
-# Distributed Systems Project - Part 3
+# Library Distributed System
 
-This repository fulfills the following functionalities:
+This repository corresponds to the third part of the Distributed Systems project. It integrates and expands upon all functionalities developed in the previous stages.
 
-## Entities with Semantic Relationship
+## Entities with Semantic Relationships
 
-- Three entities with semantic relationships established among them. These relationships are now implemented within each entity's data model.
-- **MySQL Database:** The repository now utilizes MySQL as a relational database for persistence and data storage. Data persistence is ensured by utilizing a Docker image to store the database data.
-- **Dockerized:** The application is now dockerized, allowing for easier deployment and management of the system.
+The system manages three entities with semantic relationships between them:
+
+* **Books**
+* **Libraries**
+* **Students**
+
+These relationships are defined and implemented within each entity's data model.
+
+## Data Persistence
+
+* **MySQL Database**: Unlike previous versions (which used in-memory storage and H2), this version uses MySQL as the relational database.
+* **Dockerized Environment**: The application is containerized using Docker, ensuring consistent deployment and persistent storage via Docker volumes.
 
 ## CRUD Operations
 
-- **Forms:** CRUD operations are implemented for each entity through interactive forms. Additionally, the Patch operation is available through forms.
-- **REST API:** The repository provides a REST API for performing CRUD operations on each entity. Patch operation is also supported.
+Each entity supports full CRUD operations through two interfaces:
 
-## Other
+* **Interactive Forms**: Create, Read, Update, Delete, and Patch via user-friendly forms.
+* **REST API**: Complete RESTful API with support for all CRUD and partial update (PATCH) operations.
 
-- **Postman Collection:** A Postman collection is included within the repository featuring CRUD + Patch operations for each entity.
-- **JavaScript and CSS Usage:** JavaScript and CSS have been utilized to enhance the user experience and interface design.
+## HTTP Request Body Requirement
 
-## Request Body Requirement
-
-For all PUT, POST, and PATCH endpoints, it is mandatory to include the object content in the HTTP request body.
+For all `PUT`, `POST`, and `PATCH` requests, the object data must be included in the HTTP request body.
 
 ## Running the Application
 
-To run the application, simply execute the following command from the root of the project:
+To start the application, run the following command from the project root:
 
 ```bash
 docker-compose up --build
+```
+
+## API Endpoints
+
+### Books
+
+| HTTP Method | Endpoint               | Description                 |
+| ----------- | ---------------------- | --------------------------- |
+| GET         | /api/books             | Retrieve all books          |
+| GET         | /api/books/{id}        | Retrieve book by ID         |
+| POST        | /api/books/create-book | Create a new book           |
+| PUT         | /api/books/{id}        | Update book by ID           |
+| DELETE      | /api/books/{id}        | Delete book by ID           |
+| PATCH       | /api/books/{id}        | Partially update book by ID |
+
+### Libraries
+
+| HTTP Method | Endpoint                      | Description                    |
+| ----------- | ----------------------------- | ------------------------------ |
+| GET         | /api/libraries                | Retrieve all libraries         |
+| GET         | /api/libraries/{id}           | Retrieve library by ID         |
+| POST        | /api/libraries/create-library | Create a new library           |
+| PUT         | /api/libraries/{id}           | Update library by ID           |
+| DELETE      | /api/libraries/{id}           | Delete library by ID           |
+| PATCH       | /api/libraries/{id}           | Partially update library by ID |
+
+### Students
+
+| HTTP Method | Endpoint                     | Description                    |
+| ----------- | ---------------------------- | ------------------------------ |
+| GET         | /api/students                | Retrieve all students          |
+| GET         | /api/students/{id}           | Retrieve student by ID         |
+| POST        | /api/students/create-student | Create a new student           |
+| PUT         | /api/students/{id}           | Update student by ID           |
+| DELETE      | /api/students/{id}           | Delete student by ID           |
+| PATCH       | /api/students/{id}           | Partially update student by ID |
+
+## Additional Resources
+
+* **Postman Collection**: Included in the repository for testing all CRUD and PATCH operations.
+* **Frontend Enhancements**: JavaScript and CSS have been used to enhance user experience and interface design.

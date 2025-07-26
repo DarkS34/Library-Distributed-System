@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-background-color: #1e1e24ff;
+  --secondary-background-color: #1f378d;
+  --accent-color: #596fbd;
+  --primary-color: #fff8f0ff;
+  --primary-shadow-color: #fff8f099;
+  --secondary-shadow-color: #bec2e8;
+  --secondary-color: #ffcf99ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  font-family: Montserrat,sans-serif;
+  text-decoration: none;
+  font-weight: 400;
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: linear-gradient(
+    0deg,
+    var(--primary-background-color) 0%,
+    var(--secondary-background-color) 100%
+  );
+}
+
+.site-header{
+  display: flex;
+  margin-inline: 24px;
+  height: 120px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-title {
+  color: var(--primary-color);
+  font-size: 36px;
+  letter-spacing: 5px;
+  font-weight: 100;
+  filter: drop-shadow(3px 0 0 rgba(255, 207, 153, 0.5));
+  margin: 0;
+  text-align: center;
+}
+
+.back-button {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  width: 150px;
+  transition: all .2s ease-in-out;
+  margin: 0;
+  text-align: end;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.back-button:hover {
+  background-color: var(--primary-color);
+  color: var(--primary-background-color);
+  width: 160px;
+  letter-spacing: 2px;
+}

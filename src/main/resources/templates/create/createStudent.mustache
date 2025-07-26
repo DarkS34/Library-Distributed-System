@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="/css/styles.css">  
+  <link rel="stylesheet" href="/css/createEditStyle.css">  
+  <title>Practica SSDD - Parte 1</title>
+</head>
+<body>
+  <header class="site-header">
+    <a class="back-button" href="/students">Go Back</a>
+    <h1 class="page-title">[ CREATING NEW STUDENT ... ]</h1>
+  </header>
+  <form class="entity-form" id="createStudentForm" action="/students/create-student" method="post" onSubmit="return validateEmail()">
+    <ul class="inputs-container">
+      <li class="property-input-container">
+        <input class="property-input" type="text" id="name" name="name" placeholder="NAME" required autocomplete="off">
+      </li>
+      <li class="property-input-container last-input">
+        <input class="property-input" type="email" id="email" name="email" placeholder="EMAIL" required autocomplete="off">
+      </li>
+    </ul>
+
+      <div class="selectors-container">
+        <div class="many-selector">
+          <button class="select-many-button" type="button">SELECT BOOKS </button>
+          <div class="many-container">
+            {{#existingBooks}}
+              <label class="cb-entity">
+                <input type="checkbox" name="selectedBooks" value="{{id}}">{{title}}
+              </label>
+            {{/existingBooks}}
+          </div>
+        </div>
+      </div>
+      
+      <button class="submit-btn" type="submit">CREATE</button>
+  </form>
+  <script src="/scripts/checkEmail.js"></script>
+  <script>
+    document.getElementById("bookToggle").addEventListener("click", function() {
+        var bookList = document.getElementById("bookList");
+        if (bookList.style.display === "none") {
+            bookList.style.display = "block";
+        } else {
+            bookList.style.display = "none";
+        }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+.entities-list {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.entities-list > li {
+  transition: all 0.3s ease-out;
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+  position: relative;
+}
+
+.entities-list > li:hover {
+  flex-grow: 2;
+  filter: drop-shadow(0px 0px 15px var(--secondary-color));
+}
+
+.entity-link {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  z-index: 5;
+}
+
+.entity-link > img {
+  aspect-ratio: 1;
+  width: 5vw;
+  max-width: 100px;
+  min-width: 60px;
+  transition: all 0.1s ease-out;
+}
+
+.entities-list > li:hover .entity-link > img {
+  transform: scale(1.2);
+}
+
+.entity-name {
+  color: var(--primary-color);
+  font-size: 36px;
+  font-weight: 200;
+  transition: all 0.1s ease-out;
+  padding-bottom: 1px;
+}
+
+.entities-list > li:hover .entity-name {
+  letter-spacing: 2px;
+}
+
+.entity-icon-bg {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+  z-index: 1;
+}
+
+.entities-list > li:hover .entity-icon-bg {
+  animation-name: waving;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes waving {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    opacity: 0.2;
+    transform: rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(360deg);
+  }
+}
+
+.entity-icon-bg:nth-child(1) {
+  left: 10%;
+  top: 12%;
+  width: 75px;
+  filter: blur(3px);
+  animation-duration: 10s;
+}
+
+.entity-icon-bg:nth-child(2) {
+  left: 80%;
+  top: 30%;
+  width: 90px;
+  animation-duration: 7s;
+}
+
+.entity-icon-bg:nth-child(3) {
+  left: 70%;
+  top: 80%;
+  width: 110px;
+  animation-duration: 8s;
+}
+
+.entity-icon-bg:nth-child(4) {
+  left: 15%;
+  top: 65%;
+  width: 80px;
+  filter: blur(2px);
+  animation-duration: 4s;
+}
+
+.entity-icon-bg:nth-child(5) {
+  left: 85%;
+  top: 60%;
+  width: 105px;
+  filter: blur(5px);
+  animation-duration: 11s;
+}
+
+.entity-icon-bg:nth-child(6) {
+  left: 50%;
+  top: 20%;
+  width: 80px;
+  animation-duration: 6s;
+}
+
+.entity-icon-bg:nth-child(7) {
+  left: 77%;
+  top: 15%;
+  width: 50px;
+  filter: blur(3px);
+  animation-duration: 7s;
+}
+
+.entity-icon-bg:nth-child(8) {
+  left: 22%;
+  top: 35%;
+  animation-duration: 9s;
+}
+
+.entity-icon-bg:nth-child(9) {
+  left: 40%;
+  top: 75%;
+  animation-duration: 9s;
+}

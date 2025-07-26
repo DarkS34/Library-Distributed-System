@@ -1,0 +1,222 @@
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.entity-identifier {
+  border-bottom: 1px solid var(--primary-shadow-color);
+  color: inherit;
+  font-weight: inherit;
+  padding-bottom: 12px;
+  filter: drop-shadow(0px 0px 15px var(--secondary-color));
+}
+
+.item-details-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  padding-block: 50px;
+  padding-inline: 30px;
+  justify-content: space-between;
+  margin: 0;
+  margin-top: 15vh;
+  min-width: 375px;
+  height: fit-content;
+  background: linear-gradient(
+    320deg,
+    #54649f 0%,
+    var(--secondary-background-color) 100%
+  );
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  border: 1px solid var(--primary-shadow-color);
+  gap: 48px;
+}
+
+.item-details-container:hover {
+  border: 1px solid var(--primary-color);
+}
+
+.entity-properties-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: start;
+}
+
+.entity-properties-container > p:nth-child(2n) {
+  margin-bottom: 16px;
+}
+
+.property-tag {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+  width: 100%;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  padding-left: 12px;
+  border-left: 1px solid var(--primary-shadow-color);
+}
+
+.property {
+  font-size: 18px;
+  font-weight: 100;
+  overflow-wrap: break-word;
+  margin: 0;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  padding-left: 12px;
+  border-left: 1px solid var(--primary-shadow-color);
+}
+
+.relations-container {
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* FOR ONE ENTITY */
+.related-one-entity-link {
+  color: var(--primary-color);
+  padding-block: 10px;
+  padding-inline: 12px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  min-width: 130px;
+  width: fit-content;
+  height: fit-content;
+  transition: all 0.2s ease-in-out;
+}
+
+.related-one-entity-link:hover {
+  background-color: var(--primary-color);
+}
+
+.related-one-entity-link > .property-tag {
+  font-size: 18px;
+  border-left: none;
+  font-weight: 400;
+  padding: 0;
+}
+
+.related-one-entity-link > .property {
+  font-size: 16px;
+  border-left: none;
+  font-weight: 200;
+  padding: 0;
+}
+
+.related-one-entity-link:hover > .property-tag,
+.related-one-entity-link:hover > .property {
+  color: var(--secondary-background-color);
+}
+
+/* FOR ARRAYS */
+
+.students-container,
+.books-container {
+  color: var(--primary-color);
+  padding-block: 10px;
+  padding-inline: 12px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  min-width: 130px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.propertyForArray-tag {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 12px;
+  width: 100%;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+.related-entity-link {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.related-entity-link:hover {
+  background-color: var(--primary-color);
+}
+
+.propertyForArray {
+  font-size: 16px;
+  font-weight: 100;
+  overflow-wrap: break-word;
+  margin: 0;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+.propertyForArray.first-property {
+  margin-bottom: 0;
+  padding-left: 8px;
+  margin-left: 8px;
+  border-left: 1px solid var(--primary-shadow-color);
+  font-weight: 400;
+}
+
+.propertyForArray.second-property {
+  font-size: 14px;
+  padding-left: 8px;
+  margin-left: 8px;
+  border-left: none;
+  font-weight: 300;
+}
+
+.related-entity-link:hover > .first-property,
+.related-entity-link:hover > .second-property {
+  color: var(--secondary-background-color);
+}
+
+.related-entity-link:hover > .first-property {
+  border-left: 1px solid var(--secondary-background-color);
+}
+
+/* MODIFY BUTTON */
+.modify-link {
+  display: flex;
+  border: 1px solid var(--primary-shadow-color);
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  gap: 12px;
+  padding-inline: 10%;
+  padding-block: 12px;
+  border-radius: 15px;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--primary-color);
+}
+
+.modify-link:hover {
+  scale: 0.9;
+}
+
+.modify-link > p {
+  color: var(--secondary-background-color);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.modify-link > svg {
+  margin: 0;
+}
+
+.modify-link > svg > g > path {
+  stroke: var(--secondary-background-color);
+}

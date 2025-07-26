@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="/css/styles.css">  
+  <link rel="stylesheet" href="/css/createEditStyle.css">  
+  <title>Practica SSDD - Parte 1</title>
+  <script>
+    const actualLibraryId = 0;
+    const actualStudentId = 0;
+</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="back-button" href="/books">Go Back</a>
+    <h1 class="page-title">[ CREATING NEW BOOK ... ]</h1>
+  </header>
+  <main>
+    <form class="entity-form" class="form" action="/books/create-book" method="post" onsubmit="return validateAuthor()">
+      <ul class="inputs-container">
+        <li class="property-input-container">
+          <input class="property-input" type="text" id="ISBN" name="ISBN" placeholder="ISBN" required autocomplete="off">
+        </li>
+        <li class="property-input-container">
+          <input class="property-input" type="text" id="title" name="title" placeholder="TITLE" required autocomplete="off">
+        </li>
+        <li class="property-input-container">
+          <input class="property-input" type="text" id="author" name="author" placeholder="AUTHOR" max="" required autocomplete="off">
+        </li>
+        <li class="property-input-container last-input">
+          <input class="property-input date-input" type="date" id="publishDate" name="publishDate" required>
+        </li>
+      </ul>
+
+      <div class="selectors-container">
+        <div class="library-selector">
+          <select class="one-entity-selector" name="libraryId" id="libraryId">
+            <option value="" disabled selected>Select Library</option>
+            {{#existingLibraries}}
+            <option value="{{id}}">{{name}}</option>
+            {{/existingLibraries}}
+          </select>
+          <button class="clear-library-selection" type="button">
+            <svg class="clear-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="32px"
+              height="32px">
+              <g fill="#596fbd" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
+                  stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                  font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                  <g transform="scale(8,8)">
+                      <path
+                          d="M7.21875,5.78125l-1.4375,1.4375l8.78125,8.78125l-8.78125,8.78125l1.4375,1.4375l8.78125,-8.78125l8.78125,8.78125l1.4375,-1.4375l-8.78125,-8.78125l8.78125,-8.78125l-1.4375,-1.4375l-8.78125,8.78125z">
+                      </path>
+                  </g>
+              </g>
+          </svg>
+          </button>
+        </div>
+        
+        <div class="student-selector">
+        <select disabled class="one-entity-selector" name="studentId" id="studentId">
+          <option value="" disabled selected>Select Student</option>
+          {{#existingStudents}}
+          <option value="{{id}}">{{name}}</option>
+          {{/existingStudents}}
+        </select>
+        <button class="clear-student-selection" type="button">
+          <svg class="clear-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="32px"
+              height="32px">
+              <g fill="#596fbd" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
+                  stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                  font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                  <g transform="scale(8,8)">
+                      <path
+                          d="M7.21875,5.78125l-1.4375,1.4375l8.78125,8.78125l-8.78125,8.78125l1.4375,1.4375l8.78125,-8.78125l8.78125,8.78125l1.4375,-1.4375l-8.78125,-8.78125l8.78125,-8.78125l-1.4375,-1.4375l-8.78125,8.78125z">
+                      </path>
+                  </g>
+              </g>
+          </svg>
+        </button>
+      </div>
+      </div>
+      
+      <button class="submit-btn" type="submit">CREATE</button>
+    </form>
+  </main>
+  <script src="/scripts/checkAuthorAndDate.js"></script>
+</body>
+</html>
